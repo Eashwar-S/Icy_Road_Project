@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[354]:
+# In[19]:
 
 
 import networkx as nx
@@ -10,7 +10,7 @@ import matplotlib.pyplot as plt
 import time
 
 
-# In[357]:
+# In[20]:
 
 
 def createGraph(depotNodes ,requiredEdges, numNodes, show=True):
@@ -50,11 +50,11 @@ def createGraph(depotNodes ,requiredEdges, numNodes, show=True):
     return G,pos, depot_node_color
 
 
-# In[358]:
+# In[21]:
 
 
 # Allocating task based on distance between base station and desired edge and UAV availability
-def taskAllocation(G, depotNodes, numrequiredEdges, uavsInDepotNodes):
+def taskAllocation(G, depotNodes, requiredNodes, numrequiredEdges, uavsInDepotNodes):
     depotNodesCost = np.zeros((len(depotNodes), numrequiredEdges))
     depotPath = []
     bestPathTillDesiredEdge = []
@@ -92,10 +92,10 @@ def taskAllocation(G, depotNodes, numrequiredEdges, uavsInDepotNodes):
     return bestPathTillDesiredEdge, bestCostTillDesiredEdge
 
 
-# In[359]:
+# In[25]:
 
 
-def pathScanningAlgorithm(G, bestPathTillDesiredEdge, bestCostTillDesiredEdge, vehicleCapacity):
+def pathScanningAlgorithm(G, numrequiredEdges,depotNodes, bestPathTillDesiredEdge, bestCostTillDesiredEdge, vehicleCapacity):
     bestRoute = []
     bestRouteCost = []
     minCost = np.inf
@@ -116,7 +116,7 @@ def pathScanningAlgorithm(G, bestPathTillDesiredEdge, bestCostTillDesiredEdge, v
     return bestRoute, bestRouteCost
 
 
-# In[360]:
+# In[26]:
 
 
 def visualizePath(depotNodes, requiredNodes, numNodes, path, pathType="solution"):
@@ -147,7 +147,7 @@ def visualizePath(depotNodes, requiredNodes, numNodes, path, pathType="solution"
             plt.show()
 
 
-# In[361]:
+# In[27]:
 
 
 def main():
@@ -162,9 +162,9 @@ def main():
     taskAllocatedtoBaseStations = [];
     start = time.time()
     G,pos, depot_node_color = createGraph(depotNodes, requiredNodes, numNodes, show=False)
-    bestPathTillDesiredEdge, bestCostTillDesiredEdge = taskAllocation(G, depotNodes, numrequiredEdges, uavsInDepotNodes)
+    bestPathTillDesiredEdge, bestCostTillDesiredEdge = taskAllocation(G, depotNodes, requiredNodes, numrequiredEdges, uavsInDepotNodes)
 #     visualizePath(depotNodes, requiredNodes, numNodes, bestPathTillDesiredEdge, pathType="normal")
-    bestRoute, bestRouteCost = pathScanningAlgorithm(G, bestPathTillDesiredEdge, bestCostTillDesiredEdge, vehicleCapacity)
+    bestRoute, bestRouteCost = pathScanningAlgorithm(G, numrequiredEdges, depotNodes, bestPathTillDesiredEdge, bestCostTillDesiredEdge, vehicleCapacity)
 #     visualizePath(depotNodes, requiredNodes, numNodes, bestRoute)
     end = time.time()
     print("Execution took "+ str(end-start) + " seconds.")
