@@ -1,0 +1,43 @@
+NAME : gdb-IF-16
+NODES : 8
+REQ_EDGES : 28
+NOREQ_EDGES : 0
+REQ_ARCS : 0
+NOREQ_ARCS : 0
+CAPACITY : 24
+DUMPING_COST : 0
+MAX_DURATION : 14
+DEPOT : 1
+DUMPING_SITES : 8
+LIST_REQ_EDGES :
+start_node 1,end_node 2,serv_cost 4,trav_cost 4,demand 8
+start_node 1,end_node 3,serv_cost 1,trav_cost 1,demand 1
+start_node 1,end_node 4,serv_cost 3,trav_cost 3,demand 3
+start_node 1,end_node 5,serv_cost 6,trav_cost 6,demand 2
+start_node 1,end_node 6,serv_cost 6,trav_cost 6,demand 7
+start_node 1,end_node 7,serv_cost 2,trav_cost 2,demand 2
+start_node 1,end_node 8,serv_cost 1,trav_cost 1,demand 3
+start_node 2,end_node 3,serv_cost 3,trav_cost 3,demand 8
+start_node 2,end_node 4,serv_cost 6,trav_cost 6,demand 1
+start_node 2,end_node 5,serv_cost 4,trav_cost 4,demand 1
+start_node 2,end_node 6,serv_cost 2,trav_cost 2,demand 1
+start_node 2,end_node 7,serv_cost 6,trav_cost 6,demand 2
+start_node 2,end_node 8,serv_cost 4,trav_cost 4,demand 5
+start_node 3,end_node 4,serv_cost 7,trav_cost 7,demand 7
+start_node 3,end_node 5,serv_cost 3,trav_cost 3,demand 3
+start_node 3,end_node 6,serv_cost 4,trav_cost 4,demand 6
+start_node 3,end_node 7,serv_cost 8,trav_cost 8,demand 8
+start_node 3,end_node 8,serv_cost 2,trav_cost 2,demand 1
+start_node 4,end_node 5,serv_cost 6,trav_cost 6,demand 1
+start_node 4,end_node 6,serv_cost 2,trav_cost 2,demand 2
+start_node 4,end_node 7,serv_cost 4,trav_cost 4,demand 1
+start_node 4,end_node 8,serv_cost 1,trav_cost 1,demand 4
+start_node 5,end_node 6,serv_cost 6,trav_cost 6,demand 7
+start_node 5,end_node 7,serv_cost 2,trav_cost 2,demand 3
+start_node 5,end_node 8,serv_cost 8,trav_cost 8,demand 8
+start_node 6,end_node 7,serv_cost 8,trav_cost 8,demand 6
+start_node 6,end_node 8,serv_cost 3,trav_cost 3,demand 8
+start_node 7,end_node 8,serv_cost 7,trav_cost 7,demand 7
+LIST_NOREQ_EDGES :
+LIST_REQ_ARCS :
+LIST_NOREQ_ARCS :
